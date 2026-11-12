@@ -1,5 +1,5 @@
 #include "Excepciones.h"
-PlacaInvalidaException::PlacaInvalidaException(string msj) : msj(msj) {}
+PlacaInvalidaException::PlacaInvalidaException(string msj):msj(msj) {}
 const char* PlacaInvalidaException:: what() const noexcept {
     return msj.c_str();
 }
