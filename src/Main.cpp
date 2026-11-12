@@ -53,4 +53,19 @@ int main(){
     }
     cout << "Caso 4: " << *motoAlta << " | Paga: " << motoAlta->cobrar()
          << " | Alto cilindraje: " << alto << endl;
+         
+
+    Bus* bus = new Bus("999CAR", 38);
+    flota.push_back(bus);
+    bus->setPropietario(vecino);
+    cout << "Caso 5: " << *bus << " | Paga: " << bus->cobrar() << endl;
+
+    
+    Camion* camion = new Camion("987VIV", 3);
+    flota.push_back(camion);
+    cout << "Caso 6: " << *camion << " | Paga: " << camion->cobrar() << endl;
+
+    
+    camion->agregarEje();
+    cout << "Caso 7: " << *camion << " | Paga: " << camion->cobrar() << endl;
 }
