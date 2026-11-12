@@ -1,20 +1,28 @@
 #pragma once
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-class Vehiculo {
-protected:
-    string placa;
-public:
-    Vehiculo(string placa);
-    virtual ~Vehiculo();
-    virtual string getTipo() const = 0;
+class Propietario;
 
-    string getPlaca() const;
-    void setPlaca(string placa);
-    virtual string info() const;
-    virtual int cobrar() const;
+class Vehiculo{
+    protected:
+        string placa;
+        Propietario* propietario;
+        int aplicarDescuentoVecino(int tarifa) const;
+        
+    public:
+        Vehiculo(string placa);
+        virtual ~Vehiculo();
+        virtual string getTipo() const = 0;
+
+        string getPlaca()const;
+        void setPlaca(string placa);
+        Propietario* getPropietario()const;
+        void setPropietario(Propietario* propietario);
+        virtual string info()const;
+        virtual int cobrar()const = 0;
 };
 
-ostream &operator<<(ostream &os, Vehiculo &vehiculo);
+ostream &operator <<(ostream &os, const Vehiculo &v);
