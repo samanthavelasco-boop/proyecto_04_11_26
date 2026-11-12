@@ -53,7 +53,7 @@ int main(){
     }
     cout << "Caso 4: " << *motoAlta << " | Paga: " << motoAlta->cobrar()
          << " | Alto cilindraje: " << alto << endl;
-         
+
 
     Bus* bus = new Bus("999CAR", 38);
     flota.push_back(bus);
@@ -68,4 +68,21 @@ int main(){
     
     camion->agregarEje();
     cout << "Caso 7: " << *camion << " | Paga: " << camion->cobrar() << endl;
+
+
+    try{
+        Carro* invalido = new Carro("", 2);
+        delete invalido;
+        cout << "Caso 8: no se lanzo ninguna excepcion" << endl;
+    }catch(const PlacaInvalidaException& e){
+        cout << "Caso 8: PlacaInvalidaException - " << e.what() << endl;
+    }
+
+    try{
+        Camion* invalido = new Camion("CAM001", 1);
+        delete invalido;
+        cout << "Caso 9: no se lanzo ninguna excepcion" << endl;
+    }catch(const DatosInvalidosException& e){
+        cout << "Caso 9: DatosInvalidosException - " << e.what() << endl;
+    }
 }
