@@ -79,10 +79,47 @@ int main(){
     }
 
     try{
-        Camion* invalido = new Camion("CAM001", 1);
+        Camion* invalido = new Camion("966NAR", 1);
         delete invalido;
         cout << "Caso 9: no se lanzo ninguna excepcion" << endl;
     }catch(const DatosInvalidosException& e){
         cout << "Caso 9: DatosInvalidosException - " << e.what() << endl;
     }
+
+
+    Caseta* caseta = new Caseta("Norte", operador);
+    try{
+        for(Vehiculo* v : flota){
+            caseta->registrarPaso(v);
+        }
+        cout << "Caso 10: recaudo total " << caseta->getRecaudo()
+             << " | pasos " << caseta->getTotalPasos()
+             << " | Carro: " << caseta->getConteo("Carro")
+             << " | Moto: " << caseta->getConteo("Moto")
+             << " | Bus: " << caseta->getConteo("Bus")
+             << " | Camion: " << caseta->getConteo("Camion") << endl;
+    }catch(const DatosInvalidosException& e){
+        cout << "Caso 10: DatosInvalidosException - " << e.what() << endl;
+    }
+
+    try{
+        caseta->registrarPaso(nullptr);
+    }catch(const DatosInvalidosException& e){
+        cout << "Extra: " << e.what() << " (pasos registrados: " << caseta->getTotalPasos() << ")" << endl;
+    }
+
+    for(Vehiculo* v : otros){
+        delete v;
+    }
+
+    cout << "Caso 13: orden de destruccion" << endl;
+    delete caseta;
+    for(Vehiculo* v : flota){
+        delete v;
+    }
+    for(Persona* p : personas){
+        delete p;
+    }
+
+    return 0;
 }
