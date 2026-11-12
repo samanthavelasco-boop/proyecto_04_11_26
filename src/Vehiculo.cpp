@@ -44,3 +44,4 @@ int Vehiculo::aplicarDescuentoVecino(int tarifa) const{
 ostream &operator <<(ostream &os, const Vehiculo &v){
     os << v.getTipo() << " | " << v.info();
     return os;
+}

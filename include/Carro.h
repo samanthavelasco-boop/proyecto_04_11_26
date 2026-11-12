@@ -7,7 +7,7 @@ class Carro : public Vehiculo {
 
     public:
     Carro(string placa, int pasajeros);
-    Carro();
+    ~Carro();
     void setPasajeros(int pasajeros);
     int getPasajeros() const;
     void subirPasajero();
