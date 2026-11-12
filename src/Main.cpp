@@ -38,4 +38,19 @@ int main(){
 
     carro->setPropietario(vecino);
     cout << "Caso 2: " <<*carro << " | Pagar: " << carro->cobrar() <<endl;
+
+     Moto* moto = new Moto("222EIL", 175);
+    flota.push_back(moto);
+    moto->setPropietario(vecino);
+    cout << "Caso 3: " << *moto << " | Paga: " << moto->cobrar() << endl;
+
+    
+    Moto* motoAlta = new Moto("666NIC", 600);
+    otros.push_back(motoAlta);
+    string alto = "no";
+    if(motoAlta->esAltoCilindraje()){
+        alto = "si";
+    }
+    cout << "Caso 4: " << *motoAlta << " | Paga: " << motoAlta->cobrar()
+         << " | Alto cilindraje: " << alto << endl;
 }
