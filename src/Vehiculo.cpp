@@ -32,6 +32,7 @@ string Vehiculo::info()const{
     return "Placa: " + placa;
 }
 
+
 //Descuento para los vecinos
 int Vehiculo::aplicarDescuentoVecino(int tarifa) const{
     if(propietario != nullptr && propietario->esVecino()){
