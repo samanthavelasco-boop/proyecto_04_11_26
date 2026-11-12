@@ -35,5 +35,7 @@ int main(){
     flota.push_back(carro);
     carro->setPropietario(noVecino);
     cout << "Caso 1: " << *carro << " | Paga: " << carro->cobrar() << endl;
-    
+
+    carro->setPropietario(vecino);
+    cout << "Caso 2: " <<*carro << " | Pagar: " << carro->cobrar() <<endl;
 }
