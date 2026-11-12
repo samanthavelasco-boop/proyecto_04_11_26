@@ -6,10 +6,12 @@ class Carro : public Vehiculo {
     int pasajeros;
 
     public:
-    Carro(strig placa, int pasajeros);
+    Carro(string placa, int pasajeros);
     Carro();
     void setPasajeros(int pasajeros);
-    int getPasajeros () conts;
+    int getPasajeros() const;
+    void subirPasajero();
+    string getTipo() const override;
     string info() const override;
     int cobrar() const override;
-}
+};
