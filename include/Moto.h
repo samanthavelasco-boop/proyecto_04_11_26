@@ -1,0 +1,17 @@
+#pragma once
+#include "Vehiculo.h"
+
+class Moto : public Vehiculo{
+    private:
+    int cilindraje;
+
+    public:
+    Moto(string placa, int cilindraje);
+    ~Moto();
+    void setCilindraje(int cilindraje);
+    int getCilindraje() const;
+    bool esAltoCilindraje() const;
+    string getTipo() const override;
+    string info() const override;
+    int cobrar() const override;
+};
