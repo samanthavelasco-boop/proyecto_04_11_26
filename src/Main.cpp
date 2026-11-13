@@ -31,7 +31,7 @@ int main(){
     }
     cout << endl;
 
-    Carro* carro = new Carro("123SAM", 4);
+    Carro* carro = new Carro("ABC123", 3);
     flota.push_back(carro);
     carro->setPropietario(noVecino);
     cout << "Caso 1: " << *carro << " | Paga: " << carro->cobrar() << endl;
@@ -39,13 +39,13 @@ int main(){
     carro->setPropietario(vecino);
     cout << "Caso 2: " <<*carro << " | Pagar: " << carro->cobrar() <<endl;
 
-     Moto* moto = new Moto("222EIL", 175);
+     Moto* moto = new Moto("XYZ45A", 125);
     flota.push_back(moto);
     moto->setPropietario(vecino);
     cout << "Caso 3: " << *moto << " | Paga: " << moto->cobrar() << endl;
 
     
-    Moto* motoAlta = new Moto("666NIC", 600);
+    Moto* motoAlta = new Moto("MOT650", 650);
     otros.push_back(motoAlta);
     string alto = "no";
     if(motoAlta->esAltoCilindraje()){
@@ -55,13 +55,13 @@ int main(){
          << " | Alto cilindraje: " << alto << endl;
 
 
-    Bus* bus = new Bus("999CAR", 38);
+    Bus* bus = new Bus("BUS777", 38);
     flota.push_back(bus);
     bus->setPropietario(vecino);
     cout << "Caso 5: " << *bus << " | Paga: " << bus->cobrar() << endl;
 
     
-    Camion* camion = new Camion("987VIV", 3);
+    Camion* camion = new Camion("CAM301", 3);
     flota.push_back(camion);
     cout << "Caso 6: " << *camion << " | Paga: " << camion->cobrar() << endl;
 
@@ -79,7 +79,7 @@ int main(){
     }
 
     try{
-        Camion* invalido = new Camion("966NAR", 1);
+        Camion* invalido = new Camion("CAM001", 1);
         delete invalido;
         cout << "Caso 9: no se lanzo ninguna excepcion" << endl;
     }catch(const DatosInvalidosException& e){
